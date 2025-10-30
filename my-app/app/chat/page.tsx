@@ -13,15 +13,15 @@ export default function ChatPage() {
 
   // Fetch session on mount
   useEffect(() => {
-    // const storedUser = localStorage.getItem('user');
-    // console.log("bye")
-    // console.log(storedUser);
-    // if (!storedUser) {
-    //   router.push('/login'); // No one logged in → go back
-    // } else {
-    //   console.log("hello");
-    //   setUser(JSON.parse(storedUser));
-    // }
+    const storedUser = localStorage.getItem('user');
+    console.log("bye")
+    console.log(storedUser);
+    if (!storedUser) {
+      router.push('/auth/login'); // No one logged in → go back
+    } else {
+      console.log("hello");
+      setUser(JSON.parse(storedUser));
+    }   
   }, []);
 
   const handleSend = async () => {
@@ -41,8 +41,8 @@ export default function ChatPage() {
   };
 
   const handleLogout = async () => {
-    // localStorage.removeItem('user'); // ✅ clear stored user
-    // router.push('/login');  
+    localStorage.removeItem('user'); // ✅ clear stored user
+    router.push('/auth/login');  
   };
 
   return (

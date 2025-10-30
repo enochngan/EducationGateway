@@ -40,7 +40,6 @@ export default function LoginPage() {
   console.log(localStorage.getItem("user"));
   // 5. Redirect to chat
   router.push('/chat');
-  console.log("failed to push");
   };
 
   return (

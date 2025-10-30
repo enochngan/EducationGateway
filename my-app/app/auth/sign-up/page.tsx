@@ -39,19 +39,19 @@ export default function SignUpPage() {
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-indigo-500 to-purple-600">
       <form
         onSubmit={handleSignUp}
-        className="bg-white p-8 rounded-2xl shadow-md flex flex-col w-80 space-y-4"
+        className="bg-black p-8 rounded-2xl shadow-md flex flex-col w-80 space-y-4"
       >
-        <h1 className="text-xl font-semibold text-center">Create Account</h1>
+        <h1 className="text-xl font-semibold text-center text-white">Create Account</h1>
         <input
           type="text"
-          placeholder="John Doe"
+          placeholder="Name"
           className="border rounded p-2"
           value={studentName}
           onChange={(e) => setStudentName(e.target.value)}
         />
         <input
           type="text"
-          placeholder="U67676767"
+          placeholder="BUID Ex. U23532435"
           className="border rounded p-2"
           value={buid}
           onChange={(e) => setbuid(e.target.value)}
