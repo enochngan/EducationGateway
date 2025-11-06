@@ -1,9 +1,0 @@
-{
-  "cases": [
-    {
-      "id": "sample_case_1",
-      "input": "Placeholder input",
-      "expected": "Placeholder output"
-    }
-  ]
-}
