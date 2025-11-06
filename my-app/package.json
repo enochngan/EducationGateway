@@ -1,7 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "concurrently \"npm run dev:next --turbopack\" \"npm run dev:api\"",
+    "dev:api": "python -m uvicorn backend.main:app --reload --env-file backend/.env --port 8000",
+    "dev:next": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint ."

@@ -31,13 +31,21 @@ export default function ChatPage() {
     setMessages(newMessages);
     setInput('');
 
-    // Mock LLM response (replace with API route later)
-    setTimeout(() => {
-      setMessages([
-        ...newMessages,
-        { role: 'assistant', content: "🤖 This is an AI placeholder response." },
-      ]);
-    }, 600);
+
+    const response = await fetch("http://localhost:8000/api/chat", {
+    headers: {
+    "Content-Type": "application/json",   // 👈 REQUIRED
+  },
+    method: "POST",
+    body: JSON.stringify({input}),
+
+    
+});
+    const data = await response.json()
+
+    const LLMMessages = [...messages, {role: 'LLM', content: data.reply}]
+
+    setMessages(LLMMessages)
   };
 
   const handleLogout = async () => {
