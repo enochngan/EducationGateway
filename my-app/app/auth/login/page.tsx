@@ -16,7 +16,7 @@ export default function LoginPage() {
   
   // 1. Query your custom user table
   const { data, error } = await supabase
-    .from('User_Information')
+    .from('user_information')
     .select('*')
     .eq('username', email)         // or whatever your login field is
     .eq('password', password);     // ⚠️ plain text passwords only for testing
