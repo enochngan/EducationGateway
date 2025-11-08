@@ -1,0 +1,56 @@
+{
+  "tables": {
+    "Student_Information": {
+      "columns": {
+        "student_id": "bigint PRIMARY KEY",
+        "name": "text",
+        "email": "text UNIQUE"
+      },
+      "description": "Stores basic student info, including name and email."
+    },
+    "Homework_Assignments": {
+      "columns": {
+        "homework_id": "text PRIMARY KEY",
+        "title": "text",
+        "due_date": "timestamptz",
+        "total_points": "int",
+        "average_grade": "int"
+      },
+      "description": "Each homework assignment with metadata like title, total points, average grade, and due date."
+    },
+    "student_homeworks": {
+      "columns": {
+        "student_id": "bigint (FK -> Student_Information.student_id)",
+        "homework_id": "text (FK -> Homework_Assignments.homework_id)",
+        "grade": "float8"
+      },
+      "primary_key": ["student_id", "homework_id"],
+      "description": "Join table mapping students to homework assignments with their individual grade."
+    },
+    "user_information": {
+      "columns": {
+        "username": "varchar PRIMARY KEY",
+        "password": "varchar",
+        "buid": "text UNIQUE",
+        "Student_Name": "text"
+      },
+      "description": "Stores app login credentials and user metadata (BU ID and linked student name)."
+    }
+  },
+  "relationships": [
+    {
+      "from_table": "student_homeworks",
+      "from_column": "student_id",
+      "to_table": "Student_Information",
+      "to_column": "student_id",
+      "relationship_type": "many-to-one"
+    },
+    {
+      "from_table": "student_homeworks",
+      "from_column": "homework_id",
+      "to_table": "Homework_Assignments",
+      "to_column": "homework_id",
+      "relationship_type": "many-to-one"
+    }
+  ]
+}
