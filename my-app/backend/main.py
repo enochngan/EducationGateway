@@ -87,8 +87,9 @@ async def query_database(request: Request):
     data  = await request.json()
     
     user_message = data.get('input')
-    supabase_url = os.environ['NEXT_PUBLIC_SUPABASE_URL']
-    supabase_key = os.environ['NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY']
+    supabase_url = os.environ.get('NEXT_PUBLIC_SUPABASE_URL') or os.environ.get('SUPABASE_URL')
+    # Prefer the service role key for server-side queries (bypasses RLS). Fall back to the publishable key if not set.
+    supabase_key = os.environ.get('SUPABASE_SERVICE_ROLE_KEY') or os.environ.get('NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY')
     
     translate_prompt = f"""
     You are a text-to-SQL assistant for a Supabase/PostgreSQL database.
@@ -113,14 +114,23 @@ async def query_database(request: Request):
 )
     sql_query = sql_query.candidates[0].content.parts[0].text.strip("```sql").strip("```").strip().rstrip(";")
     headers = {"apikey": supabase_key, "Authorization": f"Bearer {supabase_key}"}
-    print(f"SQl Query: {sql_query}")
+    print(f"Using Supabase URL: {supabase_url}")
+    print(f"Using Supabase Key: {'SUPABASE_SERVICE_ROLE_KEY' if os.environ.get('SUPABASE_SERVICE_ROLE_KEY') else 'NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY'}")
+    print(f"SQL Query: {sql_query}")
     query_resp = requests.post(
         f"{supabase_url}/rest/v1/rpc/run_sql",
         headers=headers,
         json={"sql": sql_query}
     )
-    print(f"query response: {query_resp.json()}")
-    query_resp = json.dumps(query_resp.json(), indent= 2)
+    # Log status and raw body for easier debugging
+    print(f"Supabase HTTP status: {query_resp.status_code}")
+    print(f"Supabase raw body: {query_resp.text}")
+    try:
+        resp_json = query_resp.json()
+    except ValueError:
+        resp_json = {"raw": query_resp.text}
+    print(f"query response json: {resp_json}")
+    query_resp = json.dumps(resp_json, indent= 2)
     natural_language = f"""
     Youre task is to convert the following output for a postgres database to a formatted natural language response: 
     
@@ -152,9 +162,9 @@ def query_database():
         schema_info = f.read()
     
     user_message = "I want to see all the user information"
-    supabase_url = os.environ['NEXT_PUBLIC_SUPABASE_URL']
-    supabase_key = os.environ['NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY']
-    
+    supabase_url = os.environ.get('NEXT_PUBLIC_SUPABASE_URL') or os.environ.get('SUPABASE_URL')
+    supabase_key = os.environ.get('SUPABASE_SERVICE_ROLE_KEY') or os.environ.get('NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY')
+
     translate_prompt = f"""
     You are a text-to-SQL assistant for a Supabase/PostgreSQL database.
     The schema is:
@@ -178,14 +188,22 @@ def query_database():
 )
     sql_query = sql_query.candidates[0].content.parts[0].text.strip("```sql").strip("```").strip().rstrip(";")
     headers = {"apikey": supabase_key, "Authorization": f"Bearer {supabase_key}"}
-    print(f"SQl Query: {sql_query}")
+    print(f"Using Supabase URL: {supabase_url}")
+    print(f"Using Supabase Key: {'SUPABASE_SERVICE_ROLE_KEY' if os.environ.get('SUPABASE_SERVICE_ROLE_KEY') else 'NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY'}")
+    print(f"SQL Query: {sql_query}")
     query_resp = requests.post(
         f"{supabase_url}/rest/v1/rpc/run_sql",
         headers=headers,
         json={"sql": sql_query}
     )
-    print(f"query response: {query_resp.json()}")
-    query_resp = json.dumps(query_resp.json(), indent= 2)
+    print(f"Supabase HTTP status: {query_resp.status_code}")
+    print(f"Supabase raw body: {query_resp.text}")
+    try:
+        resp_json = query_resp.json()
+    except ValueError:
+        resp_json = {"raw": query_resp.text}
+    print(f"query response json: {resp_json}")
+    query_resp = json.dumps(resp_json, indent= 2)
     natural_language = f"""
     Youre task is to convert the following output for a postgres database to a formatted natural language response: 
     
