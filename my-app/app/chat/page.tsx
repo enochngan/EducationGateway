@@ -11,6 +11,25 @@ export default function ChatPage() {
   const [messages, setMessages] = useState<{ role: string; content: string }[]>([]);
   const [input, setInput] = useState('');
 
+  // Load persisted messages from localStorage
+  useEffect(() => {
+    try {
+      const cached = localStorage.getItem('chat_messages');
+      if (cached) setMessages(JSON.parse(cached));
+    } catch (e) {
+      console.warn('Failed to load cached messages', e);
+    }
+  }, []);
+
+  // Persist messages whenever they change
+  useEffect(() => {
+    try {
+      localStorage.setItem('chat_messages', JSON.stringify(messages));
+    } catch (e) {
+      console.warn('Failed to persist messages', e);
+    }
+  }, [messages]);
+
   // Fetch session on mount
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
@@ -27,9 +46,9 @@ export default function ChatPage() {
   const handleSend = async () => {
     if (!input.trim()) return;
 
-    const newMessages = [...messages, { role: 'user', content: input }];
-    setMessages(newMessages);
-    setInput('');
+  const newMessages = [...messages, { role: 'user', content: input }];
+  setMessages(newMessages);
+  setInput('');
 
 
     const response = await fetch("http://localhost:8000/api/chat", {
@@ -41,11 +60,10 @@ export default function ChatPage() {
 
     
 });
-    const data = await response.json()
+  const data = await response.json();
 
-    const LLMMessages = [...messages, {role: 'LLM', content: data.reply}]
-
-    setMessages(LLMMessages)
+  // Append the LLM reply to the current messages (use functional update to avoid stale state)
+  setMessages((prev) => [...prev, { role: 'LLM', content: data.reply }]);
   };
 
   const handleLogout = async () => {
