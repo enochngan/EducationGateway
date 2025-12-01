@@ -51,19 +51,25 @@ export default function ChatPage() {
   setInput('');
 
 
-    const response = await fetch("http://localhost:8000/api/chat", {
-    headers: {
-    "Content-Type": "application/json",   // 👈 REQUIRED
-  },
-    method: "POST",
-    body: JSON.stringify({input}),
+    try {
+      const response = await fetch("http://localhost:8000/api/chat", {
+        method: "POST",
+        credentials: 'include',
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ input }),
+      });
 
-    
-});
-  const data = await response.json();
+      const data = await response.json().catch(() => ({}));
+      const reply = data?.reply || data?.error || "No reply from server.";
 
-  // Append the LLM reply to the current messages (use functional update to avoid stale state)
-  setMessages((prev) => [...prev, { role: 'LLM', content: data.reply }]);
+      // Append the LLM reply to the current messages (use functional update to avoid stale state)
+      setMessages((prev) => [...prev, { role: 'LLM', content: reply }]);
+    } catch (err) {
+      console.error('Chat request failed', err);
+      setMessages((prev) => [...prev, { role: 'LLM', content: 'Failed to contact server.' }]);
+    }
   };
 
   const handleLogout = async () => {

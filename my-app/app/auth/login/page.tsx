@@ -34,10 +34,22 @@ export default function LoginPage() {
     return;
   }
 
-  // 4. If user found, “log in”
+  // 4. If user found, "log in"
   // Example: store user info in localStorage or context
+  // 4a. Notify backend to set a server-side session cookie for this username
+  try {
+    await fetch('http://localhost:8000/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({ email }),
+    });
+  } catch (err) {
+    console.error('Failed to set session cookie', err);
+  }
+
+  // 4b. Keep storing user locally for UI state if desired
   localStorage.setItem('user', JSON.stringify(data[0]));
-  console.log(localStorage.getItem("user"));
   // 5. Redirect to chat
   router.push('/chat');
   };
