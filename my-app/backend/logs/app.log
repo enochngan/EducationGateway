@@ -1,0 +1,768 @@
+2025-12-03 21:16:40 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:16:52 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:16:57 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:16:59 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:17:27 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:19:00 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 21:19:01 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 21:19:01 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 21:19:01 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 21:19:02 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 21:19:02 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 21:19:19 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 21:19:19 - backend.main - INFO - [SQL GENERATED] SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'
+2025-12-03 21:19:19 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'... to: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'...
+2025-12-03 21:19:19 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade
+FROM student_homeworks
+WHERE student_id = '61478657' AND homework_id = 'HW1'
+2025-12-03 21:19:19 - backend.main - INFO - [SQL FINAL] SELECT grade
+FROM student_homeworks
+WHERE student_id = '61478657' AND homework_id = 'HW1'
+2025-12-03 21:19:20 - backend.main - WARNING - [QUERY RESULT] Query returned null/empty. SQL: SELECT grade
+FROM student_homeworks
+WHERE student_id = '61478657' AND homework_id = 'HW1'
+2025-12-03 21:24:25 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:24:25 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:24:30 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:24:30 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:24:35 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:25:06 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 21:25:07 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 21:25:07 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 21:25:07 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 21:25:08 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 21:25:08 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 21:25:10 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 21:25:10 - backend.main - INFO - [SQL GENERATED] SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'
+2025-12-03 21:25:10 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'... to: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'...
+2025-12-03 21:25:10 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade
+FROM student_homeworks
+WHERE student_id = '61478657' AND homework_id = 'HW1'
+2025-12-03 21:25:10 - backend.main - INFO - [SQL FINAL] SELECT grade
+FROM student_homeworks
+WHERE student_id = '61478657' AND homework_id = 'HW1'
+2025-12-03 21:25:11 - backend.main - WARNING - [QUERY RESULT] Query returned null/empty. SQL: SELECT grade
+FROM student_homeworks
+WHERE student_id = '61478657' AND homework_id = 'HW1'
+2025-12-03 21:26:21 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:26:42 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:26:56 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:27:13 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:27:23 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:28:40 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:28:52 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:29:05 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:29:36 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:30:25 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:31:00 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 21:31:01 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 21:31:01 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 21:31:01 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 21:31:01 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 21:31:01 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 21:31:02 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 21:31:02 - backend.main - INFO - [SQL GENERATED] SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'
+2025-12-03 21:31:02 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'... to: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'...
+2025-12-03 21:31:02 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade
+FROM student_homeworks
+WHERE student_id::text = '61478657' AND homework_id = 'HW1'
+2025-12-03 21:31:02 - backend.main - INFO - [SQL FINAL] SELECT grade
+FROM student_homeworks
+WHERE student_id::text = '61478657' AND homework_id = 'HW1'
+2025-12-03 21:31:02 - backend.main - INFO - [QUERY EXEC] Executing SQL: SELECT grade
+FROM student_homeworks
+WHERE student_id::text = '61478657' AND homework_id = 'HW1'
+2025-12-03 21:31:03 - backend.main - INFO - [QUERY RESPONSE] Status: 200, Body length: 4
+2025-12-03 21:31:03 - backend.main - INFO - [QUERY RESPONSE] JSON type: <class 'NoneType'>, Value: None
+2025-12-03 21:31:03 - backend.main - WARNING - [QUERY RESULT] Query returned None. This might mean no rows found.
+2025-12-03 21:31:03 - backend.main - INFO - [QUERY DEBUG] Detected string comparison for student_id (bigint). This might be the issue.
+2025-12-03 21:31:03 - backend.main - INFO - [QUERY DEBUG] Would test with: SELECT COUNT(*) as count FROM student_homeworks WHERE student_id::text = '61478657'
+2025-12-03 21:31:52 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:34:03 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:34:22 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:35:00 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:35:02 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:35:06 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:35:17 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:35:27 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:35:44 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:36:01 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:36:08 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:37:32 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:37:50 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:37:54 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:38:05 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:38:25 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 21:38:26 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 21:38:26 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 21:38:26 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 21:38:26 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 21:38:26 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 21:38:28 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 21:38:28 - backend.main - INFO - [SQL GENERATED] SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'
+2025-12-03 21:38:28 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'... to: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'...
+2025-12-03 21:38:28 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade
+FROM student_homeworks
+WHERE student_id::text = '61478657' AND homework_id = 'HW1'
+2025-12-03 21:38:28 - backend.main - INFO - [SQL FINAL] SELECT grade
+FROM student_homeworks
+WHERE student_id::text = '61478657' AND homework_id = 'HW1'
+2025-12-03 21:38:28 - backend.main - WARNING - [QUERY RESULT] Query returned null/empty. SQL: SELECT grade
+FROM student_homeworks
+WHERE student_id::text = '61478657' AND homework_id = 'HW1'
+2025-12-03 21:39:29 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:39:29 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:39:34 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:39:53 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:40:03 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:40:17 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 21:40:18 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 21:40:18 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 21:40:18 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 21:40:18 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 21:40:18 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 21:40:20 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 21:40:20 - backend.main - INFO - [SQL GENERATED] SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'
+2025-12-03 21:40:20 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'... to: SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'...
+2025-12-03 21:40:20 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 21:40:20 - backend.main - INFO - [SQL FINAL] SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 21:40:21 - backend.main - WARNING - [QUERY RESULT] Query returned null/empty. SQL: SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 21:42:12 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:42:27 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:43:02 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:43:15 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:43:42 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:43:59 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 21:44:00 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 21:44:00 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 21:44:00 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 21:44:00 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 21:44:00 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 21:44:02 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 21:44:02 - backend.main - INFO - [SQL GENERATED] SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'
+2025-12-03 21:44:02 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'... to: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'...
+2025-12-03 21:44:02 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade
+FROM student_homeworks
+WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 21:44:02 - backend.main - INFO - [SQL FINAL] SELECT grade
+FROM student_homeworks
+WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 21:44:03 - backend.main - INFO - [QUERY RESPONSE] Status: 200
+2025-12-03 21:44:03 - backend.main - INFO - [QUERY RESPONSE] Raw text (first 500 chars): null
+2025-12-03 21:44:03 - backend.main - INFO - [QUERY RESPONSE] Content-Type: application/json; charset=utf-8
+2025-12-03 21:44:03 - backend.main - INFO - [QUERY RESPONSE] JSON parsed successfully. Type: <class 'NoneType'>
+2025-12-03 21:44:03 - backend.main - INFO - [QUERY RESPONSE] JSON value: None
+2025-12-03 21:44:03 - backend.main - WARNING - [QUERY RESULT] Response is None - this might mean no rows or RLS blocking
+2025-12-03 21:44:03 - backend.main - WARNING - [QUERY RESULT] Using publishable key - RLS policies might be blocking the query
+2025-12-03 21:45:05 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:45:11 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:45:36 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:45:38 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:45:41 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:45:58 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:46:10 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:47:35 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:47:40 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:47:50 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:49:20 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:49:39 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 21:49:40 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 21:49:40 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 21:49:41 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 21:49:41 - privacy_system - INFO - [PRIVACY] Executing view statement: CREATE OR REPLACE VIEW user_information_secure AS
+        SELECT 
+            '***' as username,
+   ...
+2025-12-03 21:49:42 - privacy_system - WARNING - [PRIVACY] View statement failed with status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 21:49:42 - privacy_system - INFO - [PRIVACY] Executing view statement: CREATE OR REPLACE VIEW student_information_secure AS
+        SELECT 
+            buid as student_id,...
+2025-12-03 21:49:42 - privacy_system - WARNING - [PRIVACY] View statement failed with status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 21:49:42 - privacy_system - INFO - [PRIVACY] Privacy views creation completed
+2025-12-03 21:49:42 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 21:49:44 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 21:49:44 - backend.main - INFO - [SQL GENERATED] SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'
+2025-12-03 21:49:44 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'... to: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'...
+2025-12-03 21:49:44 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade
+FROM student_homeworks
+WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 21:49:44 - backend.main - INFO - [SQL FINAL] SELECT grade
+FROM student_homeworks
+WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 21:49:45 - backend.main - INFO - [QUERY RESPONSE] Status: 200
+2025-12-03 21:49:45 - backend.main - INFO - [QUERY RESPONSE] Raw text (first 500 chars): null
+2025-12-03 21:49:45 - backend.main - INFO - [QUERY RESPONSE] Content-Type: application/json; charset=utf-8
+2025-12-03 21:49:45 - backend.main - INFO - [QUERY RESPONSE] JSON parsed successfully. Type: <class 'NoneType'>
+2025-12-03 21:49:45 - backend.main - INFO - [QUERY RESPONSE] JSON value: None
+2025-12-03 21:49:45 - backend.main - WARNING - [QUERY RESULT] Response is None - this might mean no rows or RLS blocking
+2025-12-03 21:49:45 - backend.main - WARNING - [QUERY RESULT] Using publishable key - RLS policies might be blocking the query
+2025-12-03 21:52:24 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 21:52:25 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 21:52:25 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 21:52:25 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 21:52:25 - privacy_system - INFO - [PRIVACY] Executing view statement: CREATE OR REPLACE VIEW user_information_secure AS
+        SELECT 
+            '***' as username,
+   ...
+2025-12-03 21:52:26 - privacy_system - WARNING - [PRIVACY] View statement failed with status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 21:52:26 - privacy_system - INFO - [PRIVACY] Executing view statement: CREATE OR REPLACE VIEW student_information_secure AS
+        SELECT 
+            buid as student_id,...
+2025-12-03 21:52:26 - privacy_system - WARNING - [PRIVACY] View statement failed with status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 21:52:26 - privacy_system - INFO - [PRIVACY] Privacy views creation completed
+2025-12-03 21:52:26 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 21:52:29 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 21:52:29 - backend.main - INFO - [SQL GENERATED] SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'
+2025-12-03 21:52:29 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'... to: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'...
+2025-12-03 21:52:29 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade
+FROM student_homeworks
+WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 21:52:29 - backend.main - INFO - [SQL FINAL] SELECT grade
+FROM student_homeworks
+WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 21:52:29 - backend.main - INFO - [QUERY RESPONSE] Status: 200
+2025-12-03 21:52:29 - backend.main - INFO - [QUERY RESPONSE] Raw text (first 500 chars): null
+2025-12-03 21:52:29 - backend.main - INFO - [QUERY RESPONSE] Content-Type: application/json; charset=utf-8
+2025-12-03 21:52:29 - backend.main - INFO - [QUERY RESPONSE] JSON parsed successfully. Type: <class 'NoneType'>
+2025-12-03 21:52:29 - backend.main - INFO - [QUERY RESPONSE] JSON value: None
+2025-12-03 21:52:29 - backend.main - WARNING - [QUERY RESULT] Response is None - this might mean no rows or RLS blocking
+2025-12-03 21:52:29 - backend.main - WARNING - [QUERY RESULT] Using publishable key - RLS policies might be blocking the query
+2025-12-03 21:53:57 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:54:12 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 21:54:12 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 21:54:12 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 21:54:12 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 21:54:12 - privacy_system - INFO - [PRIVACY] Executing view statement: CREATE OR REPLACE VIEW user_information_secure AS
+        SELECT 
+            '***' as username,
+   ...
+2025-12-03 21:54:13 - privacy_system - WARNING - [PRIVACY] View statement failed with status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 21:54:13 - privacy_system - INFO - [PRIVACY] Executing view statement: CREATE OR REPLACE VIEW student_information_secure AS
+        SELECT 
+            buid as student_id,...
+2025-12-03 21:54:13 - privacy_system - WARNING - [PRIVACY] View statement failed with status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 21:54:13 - privacy_system - INFO - [PRIVACY] Privacy views creation completed
+2025-12-03 21:54:13 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 21:54:15 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 21:54:15 - backend.main - INFO - [SQL GENERATED] SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'
+2025-12-03 21:54:15 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'... to: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'...
+2025-12-03 21:54:15 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade
+FROM student_homeworks
+WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 21:54:15 - backend.main - INFO - [SQL FINAL] SELECT grade
+FROM student_homeworks
+WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 21:54:15 - backend.main - INFO - [QUERY RESPONSE] Status: 200
+2025-12-03 21:54:15 - backend.main - INFO - [QUERY RESPONSE] Raw text (first 500 chars): null
+2025-12-03 21:54:15 - backend.main - INFO - [QUERY RESPONSE] Content-Type: application/json; charset=utf-8
+2025-12-03 21:54:15 - backend.main - INFO - [QUERY RESPONSE] JSON parsed successfully. Type: <class 'NoneType'>
+2025-12-03 21:54:15 - backend.main - INFO - [QUERY RESPONSE] JSON value: None
+2025-12-03 21:54:15 - backend.main - WARNING - [QUERY RESULT] Response is None - this might mean no rows or RLS blocking
+2025-12-03 21:54:15 - backend.main - WARNING - [QUERY RESULT] Using publishable key - RLS policies might be blocking the query
+2025-12-03 21:58:54 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 21:59:37 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:00:11 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:00:37 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:02:18 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:02:22 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:02:28 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:02:30 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:02:36 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:02:46 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:03:02 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 22:03:03 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 22:03:03 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 22:03:03 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 22:03:04 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 22:03:04 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 22:03:05 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 22:03:05 - backend.main - INFO - [SQL GENERATED] SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'
+2025-12-03 22:03:05 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'... to: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1'...
+2025-12-03 22:03:05 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade
+FROM student_homeworks
+WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 22:03:05 - backend.main - INFO - [SQL FINAL] SELECT grade
+FROM student_homeworks
+WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 22:03:06 - backend.main - WARNING - [QUERY RESULT] Query returned null/empty. SQL: SELECT grade
+FROM student_homeworks
+WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 22:05:45 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:06:31 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 22:06:32 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 22:06:32 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 22:06:32 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 22:06:32 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 22:06:32 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 22:06:34 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 22:06:34 - backend.main - INFO - [SQL GENERATED] SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'
+2025-12-03 22:06:34 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'... to: SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'...
+2025-12-03 22:06:34 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 22:06:34 - backend.main - INFO - [SQL FINAL] SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 22:06:34 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 22:06:40 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 22:07:30 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 22:07:31 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 22:07:31 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 22:07:31 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 22:07:32 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 22:07:32 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 22:07:34 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 22:07:34 - backend.main - INFO - [SQL GENERATED] SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1' AND student_id = 64678953
+2025-12-03 22:07:34 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1' AND student_id = 64678953... to: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1' AND student_id = 64678953...
+2025-12-03 22:07:34 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade
+FROM student_homeworks
+WHERE student_id = 61478657 AND homework_id = 'HW1' AND student_id = 64678953
+2025-12-03 22:07:34 - backend.main - INFO - [SQL FINAL] SELECT grade
+FROM student_homeworks
+WHERE student_id = 61478657 AND homework_id = 'HW1' AND student_id = 64678953
+2025-12-03 22:07:34 - backend.main - WARNING - [QUERY RESULT] Query returned null/empty. SQL: SELECT grade
+FROM student_homeworks
+WHERE student_id = 61478657 AND homework_id = 'HW1' AND student_id = 64678953
+2025-12-03 22:07:34 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 22:07:40 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 22:08:51 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 22:08:52 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 22:08:52 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 22:08:52 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 22:08:52 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 22:08:52 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 22:08:54 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 22:08:54 - backend.main - INFO - [SQL GENERATED] SELECT grade
+FROM student_homeworks
+WHERE student_id = 64678953 AND homework_id = 'HW1'
+2025-12-03 22:08:54 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade
+FROM student_homeworks
+WHERE student_id = 64678953 AND homework_id = 'HW1'... to: SELECT grade
+FROM student_homeworks
+WHERE student_id = 64678953 AND homework_id = 'HW1'...
+2025-12-03 22:08:54 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade
+FROM student_homeworks
+WHERE student_id = 61478657 AND student_id = 64678953 AND homework_id = 'HW1'
+2025-12-03 22:08:54 - backend.main - INFO - [SQL FINAL] SELECT grade
+FROM student_homeworks
+WHERE student_id = 61478657 AND student_id = 64678953 AND homework_id = 'HW1'
+2025-12-03 22:08:54 - backend.main - WARNING - [QUERY RESULT] Query returned null/empty. SQL: SELECT grade
+FROM student_homeworks
+WHERE student_id = 61478657 AND student_id = 64678953 AND homework_id = 'HW1'
+2025-12-03 22:08:54 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 22:09:00 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 22:09:49 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 22:09:50 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 22:09:50 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 22:09:50 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 22:09:54 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 22:10:41 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:11:04 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 22:11:05 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 22:11:05 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 22:11:05 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 22:11:05 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 22:11:05 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 22:11:06 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 22:11:06 - backend.main - INFO - [SQL GENERATED] SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1' AND student_id = 64678953
+2025-12-03 22:11:06 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1' AND student_id = 64678953... to: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1' AND student_id = 64678953...
+2025-12-03 22:11:06 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade
+FROM student_homeworks
+WHERE student_id = 61478657 AND homework_id = 'HW1' AND student_id = 64678953
+2025-12-03 22:11:06 - backend.main - INFO - [SQL FINAL] SELECT grade
+FROM student_homeworks
+WHERE student_id = 61478657 AND homework_id = 'HW1' AND student_id = 64678953
+2025-12-03 22:11:07 - backend.main - WARNING - [QUERY RESULT] Query returned null/empty. SQL: SELECT grade
+FROM student_homeworks
+WHERE student_id = 61478657 AND homework_id = 'HW1' AND student_id = 64678953
+2025-12-03 22:11:07 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 22:11:14 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 22:13:15 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:13:16 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:13:21 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:13:33 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 22:13:34 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 22:13:34 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 22:13:34 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 22:13:35 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 22:13:35 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 22:13:36 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 22:13:36 - backend.main - INFO - [SQL GENERATED] SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1' AND student_id = 64678953
+2025-12-03 22:13:36 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1' AND student_id = 64678953... to: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1' AND student_id = 64678953...
+2025-12-03 22:13:36 - privacy_system - INFO - [PRIVACY] Query already specifies student_id: 64678953, caller_buid: 61478657
+2025-12-03 22:13:36 - privacy_system - WARNING - [PRIVACY] Unauthorized: User 61478657 trying to query 64678953
+2025-12-03 22:13:36 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1' AND student_id = 64678953
+2025-12-03 22:13:36 - backend.main - INFO - [SQL FINAL] SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1' AND student_id = 64678953
+2025-12-03 22:13:37 - backend.main - WARNING - [AUTHORIZATION] User 61478657 attempted to query 64678953
+2025-12-03 22:15:46 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:18:03 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:18:10 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:18:52 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:19:18 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:19:25 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:20:04 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 22:20:05 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 22:20:05 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 22:20:05 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 22:20:06 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 22:20:06 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 22:20:09 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 22:20:09 - backend.main - INFO - [SQL GENERATED] SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1' AND student_id = 64678953
+2025-12-03 22:20:09 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1' AND student_id = 64678953... to: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1' AND student_id = 64678953...
+2025-12-03 22:20:09 - privacy_system - INFO - [PRIVACY] Query already specifies student_id: 64678953, caller_buid: 61478657
+2025-12-03 22:20:09 - privacy_system - WARNING - [PRIVACY] Unauthorized: User 61478657 trying to query 64678953
+2025-12-03 22:20:09 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1' AND student_id = 64678953
+2025-12-03 22:20:09 - backend.main - INFO - [SQL FINAL] SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1' AND student_id = 64678953
+2025-12-03 22:20:09 - privacy_system - WARNING - [AUTHORIZATION] User 61478657 attempted to query 64678953
+2025-12-03 22:21:26 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:21:43 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 22:21:44 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 22:21:44 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 22:21:44 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 22:21:44 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 22:21:44 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 22:21:45 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 22:21:45 - backend.main - INFO - [SQL GENERATED] SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1' AND student_id = 64678953
+2025-12-03 22:21:45 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1' AND student_id = 64678953... to: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1' AND student_id = 64678953...
+2025-12-03 22:21:45 - privacy_system - INFO - [PRIVACY] Query already specifies student_id: 64678953, caller_buid: 61478657
+2025-12-03 22:21:45 - privacy_system - WARNING - [PRIVACY] Unauthorized: User 61478657 trying to query 64678953
+2025-12-03 22:21:45 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1' AND student_id = 64678953
+2025-12-03 22:21:45 - backend.main - INFO - [SQL FINAL] SELECT grade
+FROM student_homeworks
+WHERE homework_id = 'HW1' AND student_id = 64678953
+2025-12-03 22:21:46 - privacy_system - WARNING - [AUTHORIZATION] User 61478657 attempted to query 64678953
+2025-12-03 22:25:12 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 22:25:14 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 22:25:14 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 22:25:14 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 22:25:14 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 22:25:14 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 22:25:15 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 22:25:15 - backend.main - INFO - [SQL GENERATED] SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'
+2025-12-03 22:25:15 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'... to: SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'...
+2025-12-03 22:25:15 - privacy_system - INFO - [PRIVACY] No student_id in query, adding filter for caller: 61478657
+2025-12-03 22:25:15 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 22:25:15 - backend.main - INFO - [SQL FINAL] SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 22:25:16 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 22:25:20 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 22:29:32 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:29:52 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:30:10 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:30:25 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 22:30:26 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 22:30:26 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 22:30:26 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 22:30:26 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 22:30:27 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 22:30:27 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 22:30:28 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 22:30:28 - backend.main - INFO - [SQL GENERATED] SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'
+2025-12-03 22:30:28 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'... to: SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'...
+2025-12-03 22:30:28 - privacy_system - INFO - [PRIVACY] No student_id in query, adding filter for caller: 61478657
+2025-12-03 22:30:28 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 22:30:28 - backend.main - INFO - [SQL FINAL] SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 22:30:29 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 22:30:31 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 23:08:21 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 23:12:13 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 23:12:50 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 23:12:53 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 23:12:56 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 23:12:58 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 23:14:06 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 23:14:19 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 23:14:27 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 23:16:10 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 23:16:15 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 23:16:28 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 23:16:32 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 23:16:36 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 23:16:44 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 23:17:49 - backend.main - INFO - Logging initialized - logs will appear in console and logs/app.log
+2025-12-03 23:19:54 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'nemai@bu.edu' LIMIT 1
+2025-12-03 23:19:55 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 564634, 'role': None}]
+2025-12-03 23:19:55 - backend.main - INFO - [IDENTITY] session_username=nemai@bu.edu, caller_buid=564634, caller_role=user
+2025-12-03 23:19:55 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 23:19:56 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 23:19:56 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 23:19:57 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 23:19:57 - backend.main - INFO - [SQL GENERATED] SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 23:19:57 - backend.main - INFO - [SQL NORMALIZED] SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 23:19:57 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'... to: SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'...
+2025-12-03 23:19:57 - privacy_system - INFO - [PRIVACY] Query already specifies student_id: 61478657, caller_buid: 564634
+2025-12-03 23:19:57 - privacy_system - WARNING - [PRIVACY] Unauthorized: User 564634 trying to query 61478657
+2025-12-03 23:19:57 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 23:19:57 - backend.main - INFO - [SQL FINAL] SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 23:19:58 - privacy_system - WARNING - [AUTHORIZATION] User 564634 attempted to query 61478657
+2025-12-03 23:20:05 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'nemai@bu.edu' LIMIT 1
+2025-12-03 23:20:06 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 564634, 'role': None}]
+2025-12-03 23:20:06 - backend.main - INFO - [IDENTITY] session_username=nemai@bu.edu, caller_buid=564634, caller_role=user
+2025-12-03 23:20:06 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 23:20:06 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 23:20:06 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 23:20:08 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 23:20:08 - backend.main - INFO - [SQL GENERATED] SELECT
+  grade
+FROM student_homeworks
+WHERE
+  homework_id = 'HW1'
+2025-12-03 23:20:08 - backend.main - INFO - [SQL NORMALIZED] SELECT
+  grade
+FROM student_homeworks
+WHERE
+  homework_id = 'HW1'
+2025-12-03 23:20:08 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT
+  grade
+FROM student_homeworks
+WHERE
+  homework_id = 'HW1'... to: SELECT
+  grade
+FROM student_homeworks
+WHERE
+  homework_id = 'HW1'...
+2025-12-03 23:20:08 - privacy_system - INFO - [PRIVACY] No student_id in query, adding filter for caller: 564634
+2025-12-03 23:20:08 - privacy_system - INFO - [PRIVACY] Modified query: SELECT
+  grade
+FROM student_homeworks
+WHERE student_id = 564634 AND homework_id = 'HW1'
+2025-12-03 23:20:08 - backend.main - INFO - [SQL FINAL] SELECT
+  grade
+FROM student_homeworks
+WHERE student_id = 564634 AND homework_id = 'HW1'
+2025-12-03 23:20:09 - backend.main - WARNING - [QUERY RESULT] Query returned null/empty. SQL: SELECT
+  grade
+FROM student_homeworks
+WHERE student_id = 564634 AND homework_id = 'HW1'
+2025-12-03 23:20:09 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 23:20:12 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 23:22:17 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 23:22:18 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 23:22:18 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 23:22:18 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 23:22:19 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 23:22:19 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 23:22:21 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 23:22:21 - backend.main - INFO - [SQL GENERATED] SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 23:22:21 - backend.main - INFO - [SQL NORMALIZED] SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 23:22:21 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'... to: SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'...
+2025-12-03 23:22:21 - privacy_system - INFO - [PRIVACY] Query already specifies student_id: 61478657, caller_buid: 61478657
+2025-12-03 23:22:21 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 23:22:21 - backend.main - INFO - [SQL FINAL] SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 23:22:21 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 23:22:23 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 23:23:55 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 23:23:56 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 23:23:56 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 23:23:56 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 23:23:57 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 23:23:57 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 23:23:59 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 23:23:59 - backend.main - INFO - [SQL GENERATED] SELECT grade FROM student_homeworks WHERE student_id = 64678953 AND homework_id = 'HW1'
+2025-12-03 23:23:59 - backend.main - INFO - [SQL NORMALIZED] SELECT grade FROM student_homeworks WHERE student_id = 64678953 AND homework_id = 'HW1'
+2025-12-03 23:23:59 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade FROM student_homeworks WHERE student_id = 64678953 AND homework_id = 'HW1'... to: SELECT grade FROM student_homeworks WHERE student_id = 64678953 AND homework_id = 'HW1'...
+2025-12-03 23:23:59 - privacy_system - INFO - [PRIVACY] Query already specifies student_id: 64678953, caller_buid: 61478657
+2025-12-03 23:23:59 - privacy_system - WARNING - [PRIVACY] Unauthorized: User 61478657 trying to query 64678953
+2025-12-03 23:23:59 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade FROM student_homeworks WHERE student_id = 64678953 AND homework_id = 'HW1'
+2025-12-03 23:23:59 - backend.main - INFO - [SQL FINAL] SELECT grade FROM student_homeworks WHERE student_id = 64678953 AND homework_id = 'HW1'
+2025-12-03 23:24:00 - privacy_system - WARNING - [AUTHORIZATION] User 61478657 attempted to query 64678953
+2025-12-03 23:24:08 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 23:24:09 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 23:24:09 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 23:24:09 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 23:24:10 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 23:24:10 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 23:24:12 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 23:24:12 - backend.main - INFO - [SQL GENERATED] SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'
+2025-12-03 23:24:12 - backend.main - INFO - [SQL NORMALIZED] SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'
+2025-12-03 23:24:12 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'... to: SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'...
+2025-12-03 23:24:12 - privacy_system - INFO - [PRIVACY] No student_id in query, adding filter for caller: 61478657
+2025-12-03 23:24:12 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 23:24:12 - backend.main - INFO - [SQL FINAL] SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 23:24:13 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 23:24:17 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 23:27:59 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 23:27:59 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 23:27:59 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 23:27:59 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 23:28:00 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 23:28:00 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 23:28:02 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 23:28:02 - backend.main - INFO - [SQL GENERATED] SELECT grade
+FROM student_homeworks
+WHERE student_id = 64678953 AND homework_id = 'HW1'
+2025-12-03 23:28:02 - backend.main - INFO - [SQL NORMALIZED] SELECT grade
+FROM student_homeworks
+WHERE student_id = 64678953 AND homework_id = 'HW1'
+2025-12-03 23:28:02 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade
+FROM student_homeworks
+WHERE student_id = 64678953 AND homework_id = 'HW1'... to: SELECT grade
+FROM student_homeworks
+WHERE student_id = 64678953 AND homework_id = 'HW1'...
+2025-12-03 23:28:02 - privacy_system - INFO - [PRIVACY] Query already specifies student_id: 64678953, caller_buid: 61478657
+2025-12-03 23:28:02 - privacy_system - WARNING - [PRIVACY] Unauthorized: User 61478657 trying to query 64678953
+2025-12-03 23:28:02 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade
+FROM student_homeworks
+WHERE student_id = 64678953 AND homework_id = 'HW1'
+2025-12-03 23:28:02 - backend.main - INFO - [SQL FINAL] SELECT grade
+FROM student_homeworks
+WHERE student_id = 64678953 AND homework_id = 'HW1'
+2025-12-03 23:28:03 - privacy_system - WARNING - [AUTHORIZATION] User 61478657 attempted to query 64678953
+2025-12-03 23:28:11 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 23:28:12 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 23:28:12 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 23:28:12 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 23:28:13 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 23:28:13 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 23:28:14 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 23:28:14 - backend.main - INFO - [SQL GENERATED] SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'
+2025-12-03 23:28:14 - backend.main - INFO - [SQL NORMALIZED] SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'
+2025-12-03 23:28:14 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'... to: SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'...
+2025-12-03 23:28:14 - privacy_system - INFO - [PRIVACY] No student_id in query, adding filter for caller: 61478657
+2025-12-03 23:28:14 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 23:28:14 - backend.main - INFO - [SQL FINAL] SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 23:28:15 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 23:28:19 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 23:29:55 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 23:29:56 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 23:29:56 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 23:29:56 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 23:29:56 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 23:29:56 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 23:30:00 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 23:30:00 - backend.main - INFO - [SQL GENERATED] SELECT
+  grade
+FROM student_homeworks
+WHERE
+  student_id = 64678953 AND homework_id = 'HW1'
+2025-12-03 23:30:00 - backend.main - INFO - [SQL NORMALIZED] SELECT
+  grade
+FROM student_homeworks
+WHERE
+  student_id = 64678953 AND homework_id = 'HW1'
+2025-12-03 23:30:00 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT
+  grade
+FROM student_homeworks
+WHERE
+  student_id = 64678953 AND homework_id = 'HW1'... to: SELECT
+  grade
+FROM student_homeworks
+WHERE
+  student_id = 64678953 AND homework_id = 'HW1'...
+2025-12-03 23:30:00 - privacy_system - INFO - [PRIVACY] Query already specifies student_id: 64678953, caller_buid: 61478657
+2025-12-03 23:30:00 - privacy_system - WARNING - [PRIVACY] Unauthorized: User 61478657 trying to query 64678953
+2025-12-03 23:30:00 - privacy_system - INFO - [PRIVACY] Modified query: SELECT
+  grade
+FROM student_homeworks
+WHERE
+  student_id = 64678953 AND homework_id = 'HW1'
+2025-12-03 23:30:00 - backend.main - INFO - [SQL FINAL] SELECT
+  grade
+FROM student_homeworks
+WHERE
+  student_id = 64678953 AND homework_id = 'HW1'
+2025-12-03 23:30:00 - privacy_system - WARNING - [AUTHORIZATION] User 61478657 attempted to query 64678953
+2025-12-03 23:30:09 - backend.main - INFO - [USER LOOKUP] SQL: SELECT buid, role FROM user_information WHERE username = 'alex.smith27@edu.com' LIMIT 1
+2025-12-03 23:30:10 - backend.main - INFO - [USER LOOKUP] Response: [{'buid': 61478657, 'role': 'user'}]
+2025-12-03 23:30:10 - backend.main - INFO - [IDENTITY] session_username=alex.smith27@edu.com, caller_buid=61478657, caller_role=user
+2025-12-03 23:30:10 - privacy_system - INFO - [PRIVACY] Creating privacy views for role: user
+2025-12-03 23:30:11 - privacy_system - WARNING - [PRIVACY] View creation returned status 400: {"code":"42601","details":null,"hint":null,"message":"syntax error at or near \"CREATE\""}
+2025-12-03 23:30:11 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 23:30:12 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-12-03 23:30:12 - backend.main - INFO - [SQL GENERATED] SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'
+2025-12-03 23:30:12 - backend.main - INFO - [SQL NORMALIZED] SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'
+2025-12-03 23:30:12 - privacy_system - INFO - [PRIVACY] Query modified from: SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'... to: SELECT grade FROM student_homeworks WHERE homework_id = 'HW1'...
+2025-12-03 23:30:12 - privacy_system - INFO - [PRIVACY] No student_id in query, adding filter for caller: 61478657
+2025-12-03 23:30:12 - privacy_system - INFO - [PRIVACY] Modified query: SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 23:30:12 - backend.main - INFO - [SQL FINAL] SELECT grade FROM student_homeworks WHERE student_id = 61478657 AND homework_id = 'HW1'
+2025-12-03 23:30:13 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-12-03 23:30:16 - google_genai.models - INFO - AFC remote call 1 is done.

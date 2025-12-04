@@ -5,17 +5,43 @@ from google import genai
 from google.genai import types
 from dotenv import load_dotenv
 import os
+import sys
 import uvicorn
 import requests
 import json
 import re
 import logging
+
+# Add backend directory to path to allow importing privacy_system
+backend_dir = os.path.dirname(os.path.abspath(__file__))
+if backend_dir not in sys.path:
+    sys.path.insert(0, backend_dir)
+
+from privacy_system import PrivacySystem
 # Create the app
 load_dotenv()
 
 # Configure logging
-logging.basicConfig(level=logging.INFO)
+# Log to both console and file
+log_format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+date_format = '%Y-%m-%d %H:%M:%S'
+
+# Create logs directory if it doesn't exist
+log_dir = os.path.join(os.path.dirname(__file__), 'logs')
+os.makedirs(log_dir, exist_ok=True)
+
+# Configure logging with both file and console handlers
+logging.basicConfig(
+    level=logging.INFO,
+    format=log_format,
+    datefmt=date_format,
+    handlers=[
+        logging.FileHandler(os.path.join(log_dir, 'app.log')),
+        logging.StreamHandler()  # Console output
+    ]
+)
 logger = logging.getLogger(__name__)
+logger.info("Logging initialized - logs will appear in console and logs/app.log")
 
 app = FastAPI()
 
@@ -33,60 +59,76 @@ async def login(request: Request):
 
 schema_info = {
   "tables": {
-    "Student_Information": {
-      "columns": {
-        "student_id": "bigint PRIMARY KEY",
-        "name": "text",
-        "email": "text UNIQUE"
-      },
-      "description": "Stores basic student info, including name and email."
-    },
     "Homework_Assignments": {
+      "primary_key": ["homework_id"],
       "columns": {
-        "homework_id": "text PRIMARY KEY",
-        "title": "text",
-        "due_date": "timestamptz",
-        "total_points": "int",
-        "average_grade": "int"
-      },
-      "description": "Each homework assignment with metadata like title, total points, average grade, and due date."
+        "homework_id":    { "type": "text" },
+        "title":          { "type": "text" },
+        "due_date":       { "type": "timestamptz" },
+        "total_points":   { "type": "int8" },
+        "average_grade":  { "type": "int8" }
+      }
     },
+
     "student_homeworks": {
-      "columns": {
-        "student_id": "bigint (FK -> Student_Information.student_id)",
-        "homework_id": "text (FK -> Homework_Assignments.homework_id)",
-        "grade": "float8"
-      },
       "primary_key": ["student_id", "homework_id"],
-      "description": "Join table mapping students to homework assignments with their individual grade."
-    },
-    "user_information": {
       "columns": {
-        "username": "varchar PRIMARY KEY",
-        "password": "varchar",
-        "buid": "text UNIQUE",
-        "Student_Name": "text"
+        "student_id":   { "type": "int8" },
+        "homework_id":  { "type": "text" },
+        "grade":        { "type": "float8" }
       },
-      "description": "Stores app login credentials and user metadata (BU ID and linked student name)."
+      "foreign_keys": {
+        "student_id":   "student_information.buid",
+        "homework_id":  "Homework_Assignments.homework_id"
+      }
+    },
+
+    "student_information": {
+      "primary_key": ["buid"],
+      "columns": {
+        "buid":   { "type": "int8" },
+        "name":   { "type": "text" },
+        "email":  { "type": "text", "sensitive": "true" }
+      }
+    },
+
+    "user_information": {
+      "primary_key": ["username"],
+      "columns": {
+        "username":     { "type": "text" },
+        "password":     { "type": "varchar", "sensitive": "true" },
+        "buid":         { "type": "int8" },
+        "Student_Name": { "type": "text" },
+        "role":         { "type": "text" }
+      },
+      "foreign_keys": {
+        "buid": "student_information.buid"
+      }
     }
   },
+
   "relationships": [
     {
       "from_table": "student_homeworks",
       "from_column": "student_id",
-      "to_table": "Student_Information",
-      "to_column": "student_id",
-      "relationship_type": "many-to-one"
+      "to_table": "student_information",
+      "to_column": "buid"
     },
     {
       "from_table": "student_homeworks",
       "from_column": "homework_id",
       "to_table": "Homework_Assignments",
-      "to_column": "homework_id",
-      "relationship_type": "many-to-one"
+      "to_column": "homework_id"
+    },
+    {
+      "from_table": "user_information",
+      "from_column": "buid",
+      "to_table": "student_information",
+      "to_column": "buid"
     }
   ]
 }
+
 
 
 
@@ -157,6 +199,14 @@ async def query_database(request: Request):
     # Prefer the service role key for server-side queries (bypasses RLS). Fall back to the publishable key if not set.
     supabase_key = os.environ.get('SUPABASE_SERVICE_ROLE_KEY') or os.environ.get('NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY')
 
+    # Initialize PrivacySystem
+    privacy_system = PrivacySystem(supabase_url, supabase_key)
+    
+    # STEP 1: Create privacy views BEFORE query generation
+    # This ensures sensitive columns are protected at the database level
+    if not privacy_system.create_privacy_views(caller_role, caller_buid):
+      logger.warning("[PRIVACY] Failed to create privacy views, continuing with query modification")
+
     translate_prompt = f"""
     You are a text-to-SQL assistant for a Supabase/PostgreSQL database.
     The schema is:
@@ -166,7 +216,9 @@ async def query_database(request: Request):
     - When the user asks for "my grade" or "my homework", query the student_homeworks table directly
     - DO NOT use placeholders like 'CURRENT_USER' - the student_id will be provided separately
     - Keep queries simple and direct
-    - Only query student_homeworks, Homework_Assignments, and Student_Information tables
+    - Table names are all lowercase: student_homeworks, homework_assignments, student_information, user_information
+    - DO NOT use capital letters in table names (e.g., use "user_information" NOT "User_Information")
+    - Note: Sensitive columns (password, email, username, buid) are automatically protected by views
     
     Translate this natural language question into SQL:
     "{user_message}"
@@ -185,67 +237,34 @@ async def query_database(request: Request):
     )
     sql_query = sql_query.candidates[0].content.parts[0].text.strip("```sql").strip("```").strip().rstrip(";")
     logger.info(f"[SQL GENERATED] {sql_query}")
-    # Extract requested student_id (req_id) from generated SQL or the original message
-    buid_match = re.search(r"\b(\d{7,9})\b", sql_query)
-    req_id = buid_match.group(1) if buid_match else None
-    if not req_id:
-      buid_match_msg = re.search(r"\b(\d{7,9})\b", user_message)
-      req_id = buid_match_msg.group(1) if buid_match_msg else None
-
-    # If still no req_id, assume the user meant themselves
-    if not req_id:
-      req_id = caller_buid
-
-    logger.info(f"[AUTHORIZATION] req_id={req_id}, caller_buid={caller_buid}, caller_role={caller_role}")
     
-    # Authorization: non-admins may only query their own buid
-    if caller_role != 'admin':
-      if not caller_buid:
-        return {"reply": "Caller BU ID unknown; cannot authorize request."}
-      if not req_id:
-        return {"reply": "Could not determine target BU ID from your request. Please include the student's BU ID."}
-      if str(caller_buid) != str(req_id):
-        return {"reply": "Sorry, you are not allowed to see that."}
-    
-    # CRITICAL: Force inject student_id filter for non-admin users to prevent data leaks
-    # This ensures users can ONLY see their own data regardless of what SQL the LLM generates
-    if caller_role != 'admin' and 'student_homeworks' in sql_query.lower():
-      # Check if student_id filter already exists with the correct value
-      if f"student_id = {req_id}" not in sql_query and f"student_id={req_id}" not in sql_query:
-        # Inject student_id constraint
-        if 'where' in sql_query.lower():
-          # Append to existing WHERE - find the WHERE clause and add condition
-          sql_query = re.sub(
-            r'(WHERE|where)\s+',
-            f'WHERE student_id = {req_id} AND ',
-            sql_query,
-            count=1
-          )
-        else:
-          # Add new WHERE clause - insert before ORDER BY, LIMIT, or at end
-          if 'order by' in sql_query.lower() or 'limit' in sql_query.lower():
-            sql_query = re.sub(
-              r'(ORDER BY|order by|LIMIT|limit)',
-              f'WHERE student_id = {req_id} \\1',
-              sql_query,
-              count=1
-            )
-          else:
-            sql_query = sql_query + f" WHERE student_id = {req_id}"
+    # STEP 2: Modify query to use secure views (protects sensitive columns)
+    sql_query = privacy_system.modify_query_for_privacy(sql_query, caller_role, caller_buid)
     
     logger.info(f"[SQL FINAL] {sql_query}")
     
-    headers = {"apikey": supabase_key, "Authorization": f"Bearer {supabase_key}"}
+    headers = {
+    "apikey": supabase_key,
+    "Authorization": f"Bearer {supabase_key}",
+    "Content-Type": "application/json",
+    "Prefer": "return=representation"
+}
     print(f"Using Supabase URL: {supabase_url}")
-    print(f"Using Supabase Key: {'SUPABASE_SERVICE_ROLE_KEY' if os.environ.get('SUPABASE_SERVICE_ROLE_KEY') else 'NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY'}")
+    print(f"Using Supabase Key: {'SERVICE_KEY' if os.environ.get('SUPABASE_SERVICE_ROLE_KEY') else 'PUBLISHABLE_KEY'}")
     print(f"SQL Query: {sql_query}")
+
     query_resp = requests.post(
-      f"{supabase_url}/rest/v1/rpc/run_sql",
-      headers=headers,
-      json={"sql": sql_query}
+        f"{supabase_url}/rest/v1/rpc/run_sql",
+        headers=headers,
+        json={"sql": sql_query}
     )
+
+    print("Status:", query_resp.status_code)
+    print("Response:", query_resp.text)
+
     # Log status and raw body for easier debugging
     print(f"Supabase HTTP status: {query_resp.status_code}")
+    print(f"Query  response: {query_resp.json()}")
     print(f"Supabase raw body: {query_resp.text}")
     try:
       resp_json = query_resp.json()
@@ -253,26 +272,64 @@ async def query_database(request: Request):
       resp_json = {"raw": query_resp.text}
     print(f"query response json: {resp_json}")
     
-    # CRITICAL SAFETY CHECK: For non-admin users, verify response only contains their data
-    if caller_role != 'admin' and isinstance(resp_json, list):
-      # Check if response contains student_id field
-      if resp_json and isinstance(resp_json[0], dict) and 'student_id' in resp_json[0]:
-        # Filter to only include rows matching caller's BUID
-        filtered = [row for row in resp_json if str(row.get('student_id')) == str(caller_buid)]
-        if len(filtered) != len(resp_json):
-          logger.warning(f"[SECURITY] Filtered {len(resp_json) - len(filtered)} unauthorized rows from response")
-          resp_json = filtered
-        # If no rows match caller's BUID after filtering, return error
-        if not resp_json:
-          return {"reply": "No data found for your account."}
+    # Handle null/empty responses - might be due to views filtering too aggressively
+    if resp_json is None or (isinstance(resp_json, list) and len(resp_json) == 0):
+      logger.warning(f"[QUERY RESULT] Query returned null/empty. SQL: {sql_query}")
+      # Try querying without views to see if data exists
+      # This is a debug step - in production you might want to handle this differently
+      if 'user_information_secure' in sql_query or 'student_information_secure' in sql_query:
+        logger.info("[QUERY RESULT] Attempting to diagnose view filtering issue")
+        # The views might be too restrictive - check if original tables have data
+        return {"reply": "No data found. This might be due to privacy filtering. Please check your query or contact an administrator."}
+    
+    # STEP 4: Check authorization AFTER query execution (safety check)
+    # All authorization logic is now handled in PrivacySystem
+    is_authorized, auth_error = privacy_system.validate_query_authorization(sql_query, caller_role, caller_buid)
+    if not is_authorized:
+      return {"reply": auth_error or "Unauthorized access."}
+    
+    # STEP 5: Filter sensitive data and verify result authorization
+    # Only process if we have actual data
+    if resp_json is not None:
+      resp_json, is_authorized = privacy_system.verify_result_authorization(resp_json, caller_role, caller_buid)
+      if not is_authorized:
+        return {"reply": "No data found for your account."}
+      
+      # Additional filtering of sensitive columns
+      resp_json = privacy_system.filter_sensitive_data(resp_json, caller_role, caller_buid)
+    else:
+      return {"reply": "Query executed successfully but returned no data."}
     
     query_resp_text = json.dumps(resp_json, indent=2)
 
+    # Get user's name for personalization (from the user_row we fetched earlier)
+    user_name = user_row.get('Student_Name') or user_row.get('student_name') or user_row.get('name') if user_row else None
+    
+    # Build personalized context
+    user_context = ""
+    if user_name:
+      user_context = f"The user asking this question is {user_name} (BU ID: {caller_buid}). "
+    elif caller_buid:
+      user_context = f"The user asking this question has BU ID: {caller_buid}. "
+    
+    user_context += "IMPORTANT: When presenting grades, homework, or student data, make it clear that this is THEIR OWN data. Use phrases like 'Your grade', 'Your homework', 'You have', 'You received', etc. Always personalize the response."
+
     natural_language = f"""
-    Youre task is to convert the following output for a postgres database to a formatted natural language response: 
-
+    Your task is to convert the following database query output into a clear, natural language response.
+    
+    {user_context}
+    
+    Database output:
     {query_resp_text}
-
+    
+    Instructions:
+    - Always refer to the data as belonging to the user (use "your", "you", etc.)
+    - Be clear and friendly
+    - If showing grades, say "Your grade is..." or "You received..."
+    - If showing multiple items, say "Your grades are..." or "You have..."
+    - Make it personal and clear that this is their own information
+    
+    Convert the database output to natural language:
     """
     language_output = client.models.generate_content(
       model="gemini-2.5-flash",

@@ -17,7 +17,7 @@ export default function SignUpPage() {
 
   // 👇 Example: insert into your custom table
   const { error } = await supabase
-    .from('User_Information') // <-- replace with your actual table name
+    .from('user_information') // <-- replace with your actual table name
     .insert([
       {
         username: email,      // or another variable you collected
